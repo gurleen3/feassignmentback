@@ -12,7 +12,6 @@ app.use(bodyparser.json({limit:"100mb",extended:true}));
 app.use(bodyparser.urlencoded({limit:"100mb",extended:true}));
 app.use('/user',route);
 const PORT = process.env.PORT || 5000
-
 const url=`mongodb+srv://gurleenkhalsa03:${process.env.passkey1}@cluster0.so4icql.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>app.listen(PORT,()=>console.log(`Server running on ${PORT}`)))
